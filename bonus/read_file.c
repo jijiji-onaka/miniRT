@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 22:53:08 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/10/26 06:21:28 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/10/30 09:08:41 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ static char	*parse_obj(char **p, t_objs_info **olst)
 	t_objs_info	*new;
 	char		*(*const parse_each_obj[])(char **, void *) = {
 		parse_sphere, parse_plane, parse_square,
-		parse_triangle, parse_cylinder,
+		parse_triangle, parse_cylinder, parse_cube,
+	//	parse_pyramid,
 	};
 
 	if (!MALLOC(new, 1))

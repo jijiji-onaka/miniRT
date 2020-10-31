@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   object.c                                           :+:      :+:    :+:   */
+/*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/27 01:48:52 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/10/30 08:22:53 by tjinichi         ###   ########.fr       */
+/*   Created: 2020/10/30 09:07:44 by tjinichi          #+#    #+#             */
+/*   Updated: 2020/10/30 20:22:08 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minirt.h"
+#ifndef CUBE_H
+# define CUBE_H
 
-void	clear_olst(t_objs_info **olst)
-{
-	if (*olst == NULL)
-		return ;
-	clear_olst(&((*olst)->next));
-	free(*olst);
-}
+# include "square.h"
 
-void	olstadd_back(t_objs_info **olst, t_objs_info *new)
-{
-	if (!olst)
-		return ;
-	if (!*olst)
-		*olst = new;
-	else
-		olstadd_back(&((*olst)->next), new);
-}
+char		*parse_cube(char **p, void *obj);
+int			cube_intersect(void *obj, t_ray ray, t_hp *hp);
+
+#endif

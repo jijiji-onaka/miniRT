@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 16:31:11 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/10/26 05:52:45 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/10/30 09:08:25 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include "triangle.h"
 # include "cylinder.h"
 # include "disk.h"
+# include "cube.h"
 # include <stdlib.h>
 
 typedef struct			s_objs

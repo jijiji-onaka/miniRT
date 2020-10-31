@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 19:39:06 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/10/29 18:53:51 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/10/30 20:57:17 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ static int	closest_intersect(t_objs_info *olst, t_ray ray, t_hp *hp)
 	int		(*const each_intersect[])(void *, t_ray, t_hp *) = {
 		sphere_intersect, plane_intersect, square_intersect,
 		triangle_intersect, cylinder_intersect,
+		cube_intersect,
 	};
 
 	hp->t = DBL_MAX;
@@ -78,7 +79,7 @@ int			get_color(t_all *all, t_ray ray)
 	if (all->a != NULL)
 		add_ambient_light(&rgb, all->a);
 	if (!(closest_intersect(all->olst, ray, &(hp[0]))))
-		return (rgb_to_color(0, 255, 0));
+		return (rgb_to_color(255, rgb.y, rgb.z));
 	to_light.o = hp[0].p;
 	llst = all->llst;
 	while (llst)

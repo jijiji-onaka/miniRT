@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 19:26:30 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/10/26 06:22:22 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/10/30 09:10:13 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@
 # define ERR_PL_VEC "Plane cannot exist . "
 # define ERR_SQ_VEC "Square cannot exist . "
 # define ERR_CY_VEC "Cylinder cannot exist . "
+# define ERR_CU_VEC "Cube cannot exist . "
 # define ERR_MLX "mlx_init() is returning NULL . "
 # define ERR_MLX_WIN "mlx_new_window() is returning NULL . "
 # define ERR_MLX_IMG "mlx_new_image() is returning NULL . "

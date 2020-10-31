@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 17:29:54 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/10/26 06:12:58 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/10/30 08:21:45 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
 # define SQ 2
 # define TR 3
 # define CY 4
-// # define CU 5
-// # define PY 6
+# define CU 5
+# define PY 6
 
 #endif

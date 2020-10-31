@@ -6,7 +6,7 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/25 15:44:15 by tjinichi          #+#    #+#              #
-#    Updated: 2020/10/30 08:14:21 by tjinichi         ###   ########.fr        #
+#    Updated: 2020/10/31 14:20:50 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,6 @@ SRCS =	srcs/main.c \
 
 BONUSSRCS =	bonus/main.c \
 		bonus/read_file.c \
-		bonus/object.c \
 		bonus/free_all_lst.c \
 		bonus/ft_raytracing.c \
 		bonus/screen.c \
@@ -65,6 +64,8 @@ BONUSSRCS =	bonus/main.c \
 		bonus/object/square.c \
 		bonus/object/plane.c \
 		bonus/object/disk.c \
+		bonus/object/cube.c \
+		bonus/object/object.c \
 		bonus/environment/ambient_light.c \
 		bonus/environment/camera.c \
 		bonus/environment/light.c \
@@ -89,7 +90,7 @@ FORCE:
 
 clean:
 	$(MAKE) clean -C ./libft
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(BONUSOBJS)
 
 fclean: clean
 	$(MAKE) fclean -C ./libft
