@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 18:40:42 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/10/30 07:42:34 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/11/03 00:23:01 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define RAY_H
 
 /*
-** t_p3はrgbなどにも使える(rがxになったりするのは気にしないでください)
+** t_p3 can be used for rgb, etc.
+** (r corresponds to x.)
 */
 
 # include <math.h>
