@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 16:57:24 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/11/01 18:47:18 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/11/05 13:54:49 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	free_mlx(t_info *info)
 	if (!info)
 		return ;
 	mlx_destroy_window(info->mlx_ptr, info->win_ptr);
-	mlx_destroy_image(info->mlx_ptr, info->win_ptr);
+	mlx_destroy_image(info->mlx_ptr, info->img_ptr);
 	free(info->mlx_ptr);
 }
 
