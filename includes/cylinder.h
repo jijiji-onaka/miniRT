@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 16:22:26 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/10/30 08:06:12 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/11/10 20:50:00 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ int				cylinder_intersect(void *obj, t_ray ray, t_hp *hp);
 void			cylinder_cap(t_p3 *a, t_cylinder *cy, char c);
 double			cylinder_inside(double a, double b,
 				t_ray ray, t_cylinder *cy);
+int				inside_cy(t_p3 view_pos, t_cylinder *cy);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 15:33:05 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/10/30 08:06:26 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/11/10 20:50:17 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ static void	update_hit_point(t_hp *hp, t_cylinder *cy, t_ray ray, double t)
 	if (dotproduct(hp->nv, ray.d) > 0)
 		hp->nv = scal_times_vec(hp->nv, -1);
 	hp->rgb = cy->rgb;
-	hp->dir_to_camera = scal_times_vec(ray.d, -1);
+	if (inside_cy(ray.o, cy) == 1)
+		hp->dir_to_camera = scal_times_vec(ray.d, 1);
+	else
+		hp->dir_to_camera = scal_times_vec(ray.d, -1);
 }
 
 static int	infinite_cylinder(t_cylinder *cy, t_ray ray, t_hp *hp)

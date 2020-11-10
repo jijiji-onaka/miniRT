@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 02:24:47 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/10/26 06:01:58 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/11/10 20:47:54 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ char				*create_file_name(char *directory,
 
 	if (!directory || !file || !extension)
 		return (NULL);
-	tmp = ft_substr(file, 0, ft_strrchr(file, '.') - file);
+	tmp = ft_substr(file, ft_strrchr(file, '/') - file, \
+		ft_strrchr(file, '.') - ft_strrchr(file, '/'));
 	if (!tmp)
 		return (NULL);
 	extension_file = ft_strjoin_3(directory, tmp, extension);
