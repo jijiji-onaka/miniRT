@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 14:06:13 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/10/26 18:53:22 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/11/10 20:52:49 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void		ft_raytracing(t_info *info)
 		c = now_camera(info->all->clst, info->all->current_c);
 		screen.viewport_width = tan(DEG_TO_RAD(c->fov / 2)) * 2;
 		screen.viewport_height = screen.viewport_width * \
-			RATIO(info->all->r->y, info->all->r->x);
+			RATIO((double)info->all->r->y, (double)info->all->r->x);
 		determine_axes(screen.uvw, c->nv, -1.0);
 		create_image(info, c, screen);
 	}
