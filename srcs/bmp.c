@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 18:52:10 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/11/10 20:45:48 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/11/10 22:24:23 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,6 @@ int			open_bmp(char *file, int width, int height, int c_index)
 	fn[0] = make_extension(c_index + 1, ".bmp");
 	fn[1] = create_file_name("bmps", file, fn[0]);
 	free(fn[0]);
-	printf("%s\n", fn[1]);
 	if (!fn[1])
 		return (-1);
 	fd = open(fn[1], O_CREAT | O_WRONLY | O_TRUNC, 0644);

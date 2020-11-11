@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 16:57:24 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/11/05 13:54:49 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/11/11 11:20:28 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ static void	free_mlx(t_info *info)
 
 int			exit_hook(t_info *info)
 {
+	free_mlx(info);
 	free_all(info->all);
 	exit(0);
 }
@@ -36,7 +37,6 @@ int			key_hook(int keycode, t_info *info)
 	c_index = &(info->all->current_c);
 	if (keycode == KEYCODE_ESC)
 	{
-		free_mlx(info);
 		exit_hook(info);
 	}
 	else if (keycode == KEYCODE_LEFT && c_num > 0)
