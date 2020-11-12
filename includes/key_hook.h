@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 16:59:22 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/10/26 05:59:02 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/11/12 14:30:50 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,5 +109,6 @@
 
 int		key_hook(int keycode, t_info *info);
 int		exit_hook(t_info *info);
+int		re_paste_hook(t_info *info);
 
 #endif

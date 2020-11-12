@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 16:57:24 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/11/11 11:20:28 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/11/12 14:31:06 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,12 @@ int			key_hook(int keycode, t_info *info)
 		*c_index = (c_num + *c_index + 1) % c_num;
 		ft_raytracing(info);
 	}
+	return (0);
+}
+
+int			re_paste_hook(t_info *info)
+{
+	mlx_put_image_to_window(info->mlx_ptr, info->win_ptr,
+		info->img_ptr, 0, 0);
 	return (0);
 }

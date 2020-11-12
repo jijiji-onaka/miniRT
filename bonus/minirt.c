@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 15:52:09 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/10/26 05:15:52 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/11/12 14:32:40 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,15 @@ void		my_mlx_pixel_put(t_info *info, int x, int y, int color)
 	*(unsigned int*)dst = color;
 }
 
+static void	setup_mlx2(t_info *info)
+{
+	info->addr = mlx_get_data_addr(info->img_ptr,
+		&(info->bits_per_pixel), &(info->size_line), &(info->endian));
+	mlx_key_hook(info->win_ptr, key_hook, info);
+	mlx_hook(info->win_ptr, 17, 1L << 17, exit_hook, info);
+	mlx_hook(info->win_ptr, 9, 1L << 21, re_paste_hook, info);
+}
+
 static void	setup_mlx(t_info *info, char *fn)
 {
 	int		display_size[2];
@@ -34,18 +43,19 @@ static void	setup_mlx(t_info *info, char *fn)
 	if (info->all->r->y > display_size[0])
 		info->all->r->y = display_size[0] - 50;
 	if (!(info->win_ptr = mlx_new_window(
-		info->mlx_ptr, info->all->r->x, info->all->r->y, fn)))
-		free_all_and_exit_put(info->all, ERR_MLX_WIN);
-	if (!(info->img_ptr = mlx_new_image(info->mlx_ptr, info->all->r->x,
-		info->all->r->y)))
+				info->mlx_ptr, info->all->r->x, info->all->r->y, fn)))
 	{
+		free(info->mlx_ptr);
+		free_all_and_exit_put(info->all, ERR_MLX_WIN);
+	}
+	if (!(info->img_ptr = mlx_new_image(info->mlx_ptr, info->all->r->x,
+				info->all->r->y)))
+	{
+		free(info->mlx_ptr);
 		mlx_destroy_window(info->mlx_ptr, info->win_ptr);
 		free_all_and_exit_put(info->all, ERR_MLX_IMG);
 	}
-	info->addr = mlx_get_data_addr(info->img_ptr,
-		&(info->bits_per_pixel), &(info->size_line), &(info->endian));
-	mlx_key_hook(info->win_ptr, key_hook, info);
-	mlx_hook(info->win_ptr, 17, 1L << 17, exit_hook, info);
+	setup_mlx2(info);
 }
 
 static void	all_camera_to_bmp(t_info *info, char *filename)
