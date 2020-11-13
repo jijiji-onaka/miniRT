@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 16:59:22 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/11/12 14:30:50 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/11/13 10:25:01 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 ** BQ = backquote
 */
 # include "minirt.h"
+# if __APPLE__
 # define KEYCODE_A	0
 # define KEYCODE_B	11
 # define KEYCODE_C	8
@@ -106,6 +107,11 @@
 # define KEYCODE_END	121
 # define KEYCODE_PAGE_UP	115
 # define KEYCODE_PAGE_DOWN	119
+# elif __linux__
+#  define KEYCODE_ESC 0xff1b
+#  define KEYCODE_LEFT 0xff51
+#  define KEYCODE_RIGHT 0xff53
+# endif
 
 int		key_hook(int keycode, t_info *info);
 int		exit_hook(t_info *info);
