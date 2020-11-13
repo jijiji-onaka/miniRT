@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 17:51:45 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/10/25 16:25:58 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/11/13 15:16:20 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int		i;
-	long	res;
-	int		f;
+	int			i;
+	long long	res;
+	int			f;
 
 	i = 0;
 	res = 0;
